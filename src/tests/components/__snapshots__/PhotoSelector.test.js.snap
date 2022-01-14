@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on PhotoSelector component. It should deployed the <img /> elements 1`] = `
+<div
+  id="photoSelector"
+>
+  <h2>
+    Input a subject and select a photo. Then, press on the preview to start.
+  </h2>
+  <InputSubject
+    setConnectedParent={[Function]}
+    setLoadingParent={[Function]}
+    setPhotosParent={[Function]}
+  />
+  <div
+    id="photosContainer"
+  >
+    <p
+      className="message"
+    >
+      There were no matches with the search words.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Test on PhotoSelector component. It should match to snapshot. 1`] = `
+<div
+  id="photoSelector"
+>
+  <h2>
+    Input a subject and select a photo. Then, press on the preview to start.
+  </h2>
+  <InputSubject
+    setConnectedParent={[Function]}
+    setLoadingParent={[Function]}
+    setPhotosParent={[Function]}
+  />
+  <div
+    id="photosContainer"
+  >
+    <p
+      className="message"
+    >
+      There were no matches with the search words.
+    </p>
+  </div>
+</div>
+`;

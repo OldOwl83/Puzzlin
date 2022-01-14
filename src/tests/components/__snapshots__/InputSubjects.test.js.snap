@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on InputSubject component Rendering control 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    id="inputSubject"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</form>
+`;

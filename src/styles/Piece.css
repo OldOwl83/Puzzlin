@@ -1,0 +1,14 @@
+.pieceContainer{
+    position: relative;
+    width: 98%;
+    height: 98%;
+    overflow: hidden;
+
+    border: 1px solid gray;
+}
+
+.imgPiece{
+    position: absolute;
+
+    width: 500%;
+}

@@ -1,0 +1,20 @@
+html{
+  background-color: beige;
+  font-size: 16px;
+}
+
+body {
+  width: 900px;
+
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+
+  background-color: rgb(231, 207, 176);
+  font-family: 'Ubuntu', sans-serif;
+  
+}
+
+#root{
+  padding: 10px 30px;
+}

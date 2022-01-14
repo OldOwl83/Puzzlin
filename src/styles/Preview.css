@@ -1,0 +1,32 @@
+#previewContainer{
+    width: 66%;
+
+    margin-right: 4%;
+
+}
+
+#previewContainer img{
+    width: 100%;
+
+    border: 6px double gray;
+
+}
+
+.fadeIn{
+    transition: opacity 1s ease;
+    opacity: 100%;
+}
+
+.fadeOut{
+    opacity:0%;
+}
+
+/* .fadeIn{
+    animation: FI 1s linear;
+}
+
+@keyframes FI{
+    0% {opacity: 100%;}
+    50% {opacity: 0%;}
+    100% {opacity: 100%;}
+} */

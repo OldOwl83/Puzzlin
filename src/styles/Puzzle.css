@@ -1,0 +1,10 @@
+#puzzleContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(3, 33%);
+
+    width: 800px;
+    height: 540px;
+    margin: 4px auto;
+    padding: 10px;
+}
