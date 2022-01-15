@@ -1,6 +1,12 @@
+import { useContext } from "react";
+import { MainPhotoContext } from "../RompeCocosApp";
 
-export const PhotoShowcase = ( { photos, setImage } ) => {
-console.log(photos);
+export const PhotoShowcase = ( { photos } ) => {
+    
+    console.log(photos);
+
+    const { setPhotoPuzzle } = useContext( MainPhotoContext );
+
     return (
         <div id="photosContainer">
              
@@ -14,7 +20,7 @@ console.log(photos);
                         alt={ description } 
                         onClick={ (e) => {
                             // setMainPhoto( e.target.src );
-                            setImage( e.target.src );
+                            setPhotoPuzzle( e.target.src );
                         }} //url de la foto
                     />)
             })}

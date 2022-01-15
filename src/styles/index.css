@@ -5,11 +5,11 @@ html{
 
 body {
   width: 900px;
-
-  min-height: 100vh;
-  margin: 0 auto;
+  height: 92vh;
+  /* min-height: 100vh; */
+  margin: 10px auto;
   padding: 20px;
-
+  
   background-color: rgb(231, 207, 176);
   font-family: 'Ubuntu', sans-serif;
   

@@ -1,26 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import { InputSubject } from "./InputSubject";
 import { Preview } from './Preview';
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
 import { PhotoShowcase } from "./PhotoShowcase";
 
+import { MainPhotoContext } from "../RompeCocosApp";
+
 import '../styles/PhotoSelector.css';
 import 'animate.css';
 
-export const PhotoSelector = ( { setMainPhoto } ) => {
+export const PhotoSelector = () => {
 
     console.log('PhotoSelector');
 
     const [search, setSearch] = useState( '' );
 
-    const [ imgSelected, setImgSelected] = useState( "images/tapa.png" );
+    const { setPhotoPuzzle } = useContext( MainPhotoContext );
+
+    // const [ imgSelected, setImgSelected] = useState( "images/tapa.png" );
 
     const { photos, loading } = useFetchPhotos( search );
 
     useEffect(() => {
         if(photos.length > 0)
-            setImgSelected( photos[0].urlRegular );
+            setPhotoPuzzle( photos[0].urlRegular );
     }, [ photos ])
 
     return (
@@ -31,7 +35,7 @@ export const PhotoSelector = ( { setMainPhoto } ) => {
 
             <div id="selectorContainer">
                 
-                <PhotoShowcase photos={ photos } setImage={ setImgSelected } />
+                <PhotoShowcase photos={ photos } />
 
                 { loading && <p className="message">Loading...</p> }
                     
@@ -39,7 +43,7 @@ export const PhotoSelector = ( { setMainPhoto } ) => {
 
                 { search !== '' && !loading && photos.length < 1 && <p className="message">There were no matches with the search words.</p> }
 
-                { (search === '' || photos.length > 0) && !loading && <Preview photo={ imgSelected } start={ setMainPhoto } /> }
+                { (search === '' || photos.length > 0) && !loading && <Preview /> }
             </div>
         </>
     )

@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { Link } from "react-router-dom";
+
 import '../styles/Puzzle.css';
 import { Piece } from './Piece';
 
-export const Puzzle = ( { photo } ) => {
+export const Puzzle = () => {
     
-    const [pieces, setPieces] = useState( [] );
+    const [ pieces, setPieces ] = useState( [] );
 
     const [ change, setChange ] = useState( true );
     // console.log("Estado pieces a la renderización: ", pieces);
@@ -96,11 +98,11 @@ export const Puzzle = ( { photo } ) => {
         
         for(let i = 0; i < rows; i++)
             for(let j = 0; j < columns; j++)
-                auxPieces.push( <Piece key={ `${j}${i}` } photo={ photo } position={ [ j, i ] } /> );
+                auxPieces.push( <Piece key={ `${j}${i}` } position={ [ j, i ] } /> );
         
         auxPieces.pop();
 
-        auxPieces.push( <Piece key={ 'black' } photo={ './images/fondo.png' } position={ [ blackPositionX, blackPositionY ] } /> );
+        auxPieces.push( <Piece key={ 'black' } black={ true } position={ [ blackPositionX, blackPositionY ] } /> );
 
         setPieces( auxPieces );
 
@@ -115,8 +117,12 @@ export const Puzzle = ( { photo } ) => {
     
     return (
 
+        <>
         <div id="puzzleContainer">
             { change && pieces.map( piece => piece) }
         </div>
+
+        <Link to="/"><button>Come back to photos selector</button></Link>
+        </>
     );
 }
