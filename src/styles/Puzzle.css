@@ -1,10 +1,66 @@
 #puzzleContainer{
     display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: repeat(3, 33%);
 
     width: 800px;
     height: 540px;
-    margin: 4px auto;
-    padding: 10px;
+    margin: 18px auto;
+    /* padding: 10px; */
+}
+
+#victoryPhoto{
+    display: block;
+    width: 800px;
+    height: 540px;
+    margin: 18px auto;
+    box-sizing: content-box;
+
+    border: 6px double gray;
+}
+
+#victoryAlert{
+    position: absolute;
+    top: 44%;
+    left: 32%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36%;
+    height: 140px;
+    padding: 0;
+
+    background-color: #445;
+    border: 3px solid #aaa;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px #555;
+
+    animation: backInDown 1.2s;
+}
+
+#victoryAlert p{
+    
+    font-size: 42px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: white;
+
+}
+
+#comeBack{
+    margin: 12px;
+    padding: 5px 8px;
+
+    font-size: 1.2rem;
+    color: rgb(18, 112, 116);
+    font-family: 'Cantarell light';
+    font-weight: bolder;
+
+    background-color: beige;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#comeBack:hover{
+    background-color: #ccc;
 }

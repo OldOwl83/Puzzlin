@@ -1,18 +1,26 @@
+*{
+  user-select: none;
+}
+
 html{
   background-color: beige;
   font-size: 16px;
 }
 
 body {
-  width: 900px;
-  height: 92vh;
-  /* min-height: 100vh; */
+  position: relative;
+  
+  max-width: 1000px;
+  min-width: 740px;
+  width: 80%;
+  height: 800px;
+  
   margin: 10px auto;
   padding: 20px;
   
-  background-color: rgb(231, 207, 176);
+  background-color: rgb(214, 151, 68);
+  border: 5px solid rgb(230, 185, 127);
   font-family: 'Ubuntu', sans-serif;
-  
 }
 
 #root{

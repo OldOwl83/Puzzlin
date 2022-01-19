@@ -1,31 +1,110 @@
 .pieceContainer{
     position: relative;
-    display: flex;
-    justify-content: center;
-
+    
     width: 98%;
     height: 98%;
     overflow: hidden;
-
+    
     border: 1px solid gray;
+    border-radius: 8px;
     box-sizing: border-box;
 }
 
-.pieceContainer.black{
-    border: 4px solid black;
-    background-color: rgb(182, 51, 51);
+.blackPieceContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 98%;
+    height: 98%;
+    
+    border: 2px solid black;
+    border-radius: 8px;
+    background: radial-gradient(beige 0%, #333 90%);
+    box-sizing: border-box;
 }
 
 .imgPiece{
     position: absolute;
-
-    width: 500%;
 }
 
 .imgBlack{
-    position: relative;
+   
+    width: 80%;
+    height: 70%;
 
-    object-fit: contain;
+    border-radius: 8px;
+}
 
-    width: 88%;
+.up{
+    animation: goUp 0.7s;
+}
+
+.down{
+    animation: goDown 0.7s;
+}
+
+.left{
+    animation: goLeft 0.7s;
+}
+
+.right{
+    animation: goRight 0.7s;
+}
+
+@keyframes goUp{
+    from { transform: translateY(100%); }
+    to { transform: translateY(0%);}
+}
+
+@keyframes goDown{
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0%);}
+}
+
+@keyframes goLeft{
+    from { transform: translateX(100%); }
+    to { transform: translateY(0%);}
+}
+
+@keyframes goRight{
+    from { transform: translateX(-100%); }
+    to { transform: translateY(0%);}
+}
+
+/* It must redefined the same animation for the black piece, to force to take it when two piece exchange positions twice or more consecutively. */
+.blackdown{
+    animation: blackGoUp 0.7s;
+}
+
+.blackup{
+    animation: blackGoDown 0.7s;
+}
+
+.blackright{
+    animation: blackGoLeft 0.7s;
+}
+
+.blackleft{
+    animation: blackGoRight 0.7s;
+}
+
+@keyframes blackGoUp{
+    from { transform: translateY(100%); }
+    to { transform: translateY(0%);}
+}
+
+@keyframes blackGoDown{
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0%);}
+}
+
+@keyframes blackGoLeft{
+    from { transform: translateX(100%); }
+    to { transform: translateY(0%);}
+}
+
+@keyframes blackGoRight{
+    from { transform: translateX(-100%); }
+    to { transform: translateY(0%);}
 }

@@ -5,11 +5,12 @@ form{
 }
 
 #inputSubject{
-    width: 16%;
-    margin: 10px 20px;
+    width: 14%;
+    margin: 8px 20px;
     padding: 2px 5px;
 
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    
     border: 2px solid #555;
-    border-radius: 8px;
+    border-radius: 4px;
 }

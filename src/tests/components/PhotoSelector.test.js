@@ -100,7 +100,7 @@ describe('Test on PhotoSelector component.', () => {
 
         const respu = renderHook( () => useState( { photos: imgs, loading: false, connected: true } ));
 
-        console.log( respu.result.current );
+        // console.log( respu.result.current );
 
         const wrapper = shallow( <PhotoSelector setMainPhoto={ setMP } />);
 

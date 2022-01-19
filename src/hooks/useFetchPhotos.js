@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchPhotos } from '../functions/fetchPhotos';
 
 export const useFetchPhotos = ( keywords = '' ) => {
-    console.log("Aquí useFetchPhotos!!");
+    // console.log("Aquí useFetchPhotos!!");
     const [searchState, setSearchState] = useState( 
         {
             photos: [],

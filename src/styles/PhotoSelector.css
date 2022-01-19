@@ -1,6 +1,6 @@
 h2{
     color: rgb(18, 112, 116);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 #selectorContainer{
@@ -14,38 +14,6 @@ h2{
     padding: 14px;
 }
 
-#photosContainer{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    
-    width: 17%;
-    height: 540px;
-    padding: 10px;
-    
-    border: 2px solid gray;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px black;
-    background-color: rgb(245, 186, 186);
-}
-
-#photosContainer img{
-    width: 88%;
-    margin: 6px auto;
-    
-    border: 2px solid gray;
-    border-radius: 10px;
-    box-shadow: 3px 3px 4px black;
-    
-    transition: box-shadow 0.4s ease;
-}
-
-#photosContainer img:hover{
-    box-shadow: none;
-}
-
 #imgPreview{
     width: 70%;
 }
@@ -53,9 +21,9 @@ h2{
 .message{
     display: inline-block;
 
-    width: 70%;
+    width: 66%;
 
-    font-size: 34px;
+    font-size: 2.2rem;
 
     color: rgb(45, 22, 88);
 }

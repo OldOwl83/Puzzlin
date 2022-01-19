@@ -1,128 +1,121 @@
-import { useState, useEffect, useContext } from 'react';
+import { useReducer, useEffect, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
+import { initPieces, piecesReducer } from '../functions/piecesReducer';
+import { useVictory } from '../hooks/useVictory';
+import { MainPhotoContext, PuzzleGrid } from '../RompeCocosApp';
 
 import '../styles/Puzzle.css';
 import { Piece } from './Piece';
 
+export let columns;
+export let rows;
+
 export const Puzzle = () => {
     
-    const [ pieces, setPieces ] = useState( [] );
+    const { puzzleGrid } = useContext( PuzzleGrid );
+    const { photoPuzzle } = useContext( MainPhotoContext );
+    
+    columns = puzzleGrid[0];
+    rows = puzzleGrid[1];
 
-    const [ change, setChange ] = useState( true );
-    // console.log("Estado pieces a la renderización: ", pieces);
+    const [ positions, dispatch ] = useReducer( piecesReducer, [], initPieces );
     
-    const rows = 3;
-    const columns = 5;
-    const auxPieces = pieces.slice();
-    
-    let [ blackPositionX, blackPositionY ] = [ 4, 2 ];
+    const [ direc, setDirec ] = useState( '' );
+
+    const win = useVictory( positions );
 
     const movePiece = ( e ) => {
-        e.preventDefault();
         
-        setChange( false );
-        let auxPiece;
+        const blackIndex = positions.findIndex( pos => pos === 'black' );
         
         switch (e.key) {
+
             case 'ArrowDown':
+
+                e.preventDefault(); //It only prevent default actions for the current pressed key.
                 
-                if( blackPositionY > 0)
+                if( blackIndex / columns >= 1)
                 {
-                    auxPiece = auxPieces[blackPositionX + blackPositionY * 5];
-                    
-                    auxPieces[blackPositionX + blackPositionY * 5] = auxPieces[blackPositionX + (blackPositionY - 1) * 5];
-                    
-                    auxPieces[blackPositionX + (blackPositionY - 1) * 5] = auxPiece;
-                    
-                    blackPositionY--;
+                    setDirec( ['down', 'up'] );
+                    dispatch("down");
                 }
-                
                 break;
                 
             case 'ArrowUp':
-                
-                if( blackPositionY < rows - 1)
+
+                e.preventDefault();
+                    
+                if( blackIndex / columns < rows - 1)
                 {
-                    auxPiece = auxPieces[blackPositionX + blackPositionY * 5];
-                    
-                    auxPieces[blackPositionX + blackPositionY * 5] = auxPieces[blackPositionX + (blackPositionY + 1) * 5];
-                    
-                    auxPieces[blackPositionX + (blackPositionY + 1) * 5] = auxPiece;
-                    
-                    blackPositionY++;
-                }
-            
-                break;
-            
-            case 'ArrowLeft':
-                
-                if( blackPositionX < columns - 1)
-                {
-                    auxPiece = auxPieces[blackPositionX + blackPositionY * 5];
-                    
-                    auxPieces[blackPositionX + blackPositionY * 5] = auxPieces[blackPositionX + 1 + blackPositionY * 5];
-                    
-                    auxPieces[blackPositionX + 1 + blackPositionY * 5] = auxPiece;
-                    
-                    blackPositionX++;
-                }
-                
+                    setDirec( ['up', 'down'] );
+                    dispatch("up");
+                }   
                 break;
                 
             case 'ArrowRight':
+
+                e.preventDefault();
                 
-                if( blackPositionX > 0)
+                if( blackIndex % columns !== 0)
                 {
-                    auxPiece = auxPieces[blackPositionX + blackPositionY * 5];
-                    
-                    auxPieces[blackPositionX + blackPositionY * 5] = auxPieces[blackPositionX - 1 + blackPositionY * 5];
-                    
-                    auxPieces[blackPositionX - 1 + blackPositionY * 5] = auxPiece;
-                    
-                    blackPositionX--;
-                }
-                
+                    setDirec( ['right', 'left'] );
+                    dispatch("right");
+                }   
                 break;
                 
-                default:
-                    break;
-                    
+            case 'ArrowLeft':
+
+                e.preventDefault();
+
+                if( blackIndex % columns !== columns - 1)
+                {
+                    setDirec( ['left', 'right'] );
+                    dispatch("left");
+                }   
+                break;
+                                
+            default:
+                break;
         }
-                
-        console.log("x: " + blackPositionX + " y: " + blackPositionY);
-        setPieces( auxPieces );
-        setChange( true );
     }
                     
     useEffect(() => {
-        
-        for(let i = 0; i < rows; i++)
-            for(let j = 0; j < columns; j++)
-                auxPieces.push( <Piece key={ `${j}${i}` } position={ [ j, i ] } /> );
-        
-        auxPieces.pop();
-
-        auxPieces.push( <Piece key={ 'black' } black={ true } position={ [ blackPositionX, blackPositionY ] } /> );
-
-        setPieces( auxPieces );
-
-        // console.log("Estado inicial auxPieces: ", auxPieces);
         
         window.addEventListener( 'keydown', movePiece, false );
 
         return () => {
             window.removeEventListener( 'keydown', movePiece );
         }
-    }, []);
-    
+    }); //It have not dependencies, because it needs update the value of 'blackIndex' in the 'movePiece' function.
+
+    useEffect( () => {
+
+        if(win)
+            window.removeEventListener( 'keydown', movePiece );
+    }, [ win ]);
+
     return (
 
         <>
-        <div id="puzzleContainer">
-            { change && pieces.map( piece => piece) }
-        </div>
+        <h2>Use the keyboard arrows to move the pieces inside the hole</h2>
+        { !win && 
+        
+        <div 
+            id="puzzleContainer" 
+            style={ { gridTemplateColumns: `repeat(${ columns }, ${ (100 / columns) }%)`,
+    gridTemplateRows: `repeat(${ rows }, ${ (100 / rows) }%)`, } }
+        >
 
-        <Link to="/"><button>Come back to photos selector</button></Link>
+            { positions.map( ( pos, i ) => <Piece key={ i } position={ pos } direc={direc} />) }
+
+        </div> }
+
+        { win && <img id="victoryPhoto" src={ photoPuzzle } />}
+
+        <Link to="/"><button id="comeBack">Come back to photos selector</button></Link>
+
+        { win && <div id='victoryAlert'><p>You win!</p></div>}
+
         </>
     );
 }

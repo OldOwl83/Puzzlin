@@ -5,7 +5,7 @@ import '../styles/InputSubject.css';
 
 export const InputSubject = ( { setSearch } ) => {
 
-    console.log( 'InputSubject' );
+    // console.log( 'InputSubject' );
 
     const [ input, setInput ] = useState( '' );
     

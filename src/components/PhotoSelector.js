@@ -12,20 +12,21 @@ import 'animate.css';
 
 export const PhotoSelector = () => {
 
-    console.log('PhotoSelector');
+    // console.log('PhotoSelector');
 
     const [search, setSearch] = useState( '' );
 
     const { setPhotoPuzzle } = useContext( MainPhotoContext );
 
-    // const [ imgSelected, setImgSelected] = useState( "images/tapa.png" );
-
     const { photos, loading } = useFetchPhotos( search );
 
     useEffect(() => {
         if(photos.length > 0)
+        {
             setPhotoPuzzle( photos[0].urlRegular );
-    }, [ photos ])
+            sessionStorage.setItem( 'photosPuzzle5598', JSON.stringify( photos ));
+        }
+    }, [ photos, setPhotoPuzzle ])
 
     return (
         <>

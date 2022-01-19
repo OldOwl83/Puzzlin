@@ -1,14 +1,29 @@
 export const fetchPhotos = async( keywords = '' ) => {
 
-    const resp = await fetch(`https://api.unsplash.com/search/photos?query=${ encodeURI(keywords) }&per_page=100&client_id=xjexFbnrsQ1Pg_j3X7tZP8NSSYv_fIj2yH6rXAb-s7g`);
+    let page = 1;
+    const widePhotos = [];
 
-    const data = await resp.json();
+    do
+    {
 
-    const widePhotos = data.results.filter( obj => obj.width / 1.2 > obj.height && obj.width / 1.52 < obj.height);
+        const resp = await fetch(`https://api.unsplash.com/search/photos?query=${ encodeURI(keywords) }&page=${ page }&per_page=100&client_id=xjexFbnrsQ1Pg_j3X7tZP8NSSYv_fIj2yH6rXAb-s7g`);
+
+        const data = await resp.json();
+        console.log(data);
+        if( data.total !== 0 )
+            widePhotos.push( ...data.results.filter( obj => obj.width / 1.3 > obj.height && obj.width / 1.42 < obj.height) );
+        else
+            break;
+        
+        console.log('Vuelta', page);
+        
+        page++;
+        
+    }while(widePhotos.length < 20 && page < 30);
     
-    
-    const photos = widePhotos.map( ( obj ) => {
-            
+    console.log('widePhotos: ', widePhotos);
+    const photos = widePhotos.map( ( obj ) => { 
+        
         return {
             id: obj.id,
             description: obj.alt_description, 
@@ -17,6 +32,6 @@ export const fetchPhotos = async( keywords = '' ) => {
             author: obj.user.name,
         };
     });
-
+    console.log('photos: ', photos);
     return photos;
 }
