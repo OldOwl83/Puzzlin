@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { fetchPhotos } from '../functions/fetchPhotos';
 
 export const useFetchPhotos = ( keywords = '' ) => {
     // console.log("Aquí useFetchPhotos!!");
 
-    const query = useParams().query;
+    const query = useLocation().search.slice(3);
+    console.log("Query: ", query);
     
     const [ searchState, setSearchState ] = useState( 
         {

@@ -19,7 +19,7 @@ export const InputSubject = ( { setSearch } ) => {
 
         setSearch( input );
 
-        navigate( `../${ input }` );
+        navigate( `../?q=${ input }` );
     }
 
     return (
