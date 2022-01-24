@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { PropTypes } from 'prop-types';
+import { useNavigate } from "react-router-dom";
 
 import '../styles/InputSubject.css';
 
 export const InputSubject = ( { setSearch } ) => {
 
     // console.log( 'InputSubject' );
+
+    const navigate = useNavigate();
 
     const [ input, setInput ] = useState( '' );
     
@@ -15,6 +18,8 @@ export const InputSubject = ( { setSearch } ) => {
         setInput( '' );
 
         setSearch( input );
+
+        navigate( `../${ input }` );
     }
 
     return (
@@ -24,6 +29,7 @@ export const InputSubject = ( { setSearch } ) => {
                 <input 
                     id="inputSubject"
                     type="text"
+                    autoComplete="on"
                     value={ input }
                     onChange={ (e) => setInput( e.target.value ) }
                 />

@@ -5,7 +5,7 @@ h2{
 
 #selectorContainer{
     display: flex;
-    justify-content:space-between;
+    justify-content:space-around;
 
     align-items: center;
 
@@ -26,5 +26,17 @@ h2{
     font-size: 2.2rem;
 
     color: rgb(45, 22, 88);
+}
+
+#loading{
+    width: 18%;
+    
+    transform-origin: center;
+    animation: turn 1.4s infinite;
+}
+
+@keyframes turn{
+    from { transform: rotate( 0 ); }
+    to { transform: rotate( 360deg ); }
 }
 

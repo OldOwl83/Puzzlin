@@ -7,15 +7,15 @@ import { createContext, useState } from "react";
 import { PhotoSelector } from "./components/PhotoSelector";
 import { Puzzle } from "./components/Puzzle";
 
-import './styles/RompeCocosApp.css';
+import './styles/Puzzlin.css';
 
 export const MainPhotoContext = createContext( null );
 export const PuzzleGrid = createContext( [] );
 
-export const RompeCocosApp = () => {
+export const Puzzlin = () => {
 
     const [ photoPuzzle, setPhotoPuzzle ] = useState( "images/tapa.png" );
-    const [ puzzleGrid, setPuzzleGrid ] = useState( [3, 3] );
+    const [ puzzleGrid, setPuzzleGrid ] = useState( [4, 3] );
 
 
     return (
@@ -29,7 +29,8 @@ export const RompeCocosApp = () => {
 
                     <Routes>
 
-                        <Route exact path="/" element={ <PhotoSelector /> } />
+                        <Route path="/" element={ <PhotoSelector /> } />
+                        <Route path="/:query" element={ <PhotoSelector /> } />
 
                         <Route exact path="/puzzle" element={ <Puzzle /> } />
 

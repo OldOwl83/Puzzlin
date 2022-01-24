@@ -2,7 +2,7 @@ import { useReducer, useEffect, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import { initPieces, piecesReducer } from '../functions/piecesReducer';
 import { useVictory } from '../hooks/useVictory';
-import { MainPhotoContext, PuzzleGrid } from '../RompeCocosApp';
+import { MainPhotoContext, PuzzleGrid } from '../Puzzlin';
 
 import '../styles/Puzzle.css';
 import { Piece } from './Piece';
@@ -86,7 +86,7 @@ export const Puzzle = () => {
         return () => {
             window.removeEventListener( 'keydown', movePiece );
         }
-    }); //It have not dependencies, because it needs update the value of 'blackIndex' in the 'movePiece' function.
+    }, [ positions ] ); //It needs update the value of 'blackIndex' in the 'movePiece' function.
 
     useEffect( () => {
 

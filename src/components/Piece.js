@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef } from 'react';
 // import PropTypes from 'prop-types';
 
 import '../styles/Piece.css';
-import { MainPhotoContext, PuzzleGrid } from '../RompeCocosApp';
+import { MainPhotoContext, PuzzleGrid } from '../Puzzlin';
 // import { columns } from './Puzzle';
 
 export const Piece = ( { position, direc } ) => {

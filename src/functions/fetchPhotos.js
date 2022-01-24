@@ -5,8 +5,7 @@ export const fetchPhotos = async( keywords = '' ) => {
 
     do
     {
-
-        const resp = await fetch(`https://api.unsplash.com/search/photos?query=${ encodeURI(keywords) }&page=${ page }&per_page=100&client_id=xjexFbnrsQ1Pg_j3X7tZP8NSSYv_fIj2yH6rXAb-s7g`);
+        const resp = await fetch(`https://api.unsplash.com/search/photos?query=${ encodeURI( keywords ) }&page=${ page }&per_page=100&orientation=landscape&client_id=xjexFbnrsQ1Pg_j3X7tZP8NSSYv_fIj2yH6rXAb-s7g`);
 
         const data = await resp.json();
         console.log(data);
@@ -19,7 +18,7 @@ export const fetchPhotos = async( keywords = '' ) => {
         
         page++;
         
-    }while(widePhotos.length < 20 && page < 30);
+    }while(widePhotos.length < 20 && page < 10);
     
     console.log('widePhotos: ', widePhotos);
     const photos = widePhotos.map( ( obj ) => { 

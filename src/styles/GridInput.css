@@ -1,0 +1,36 @@
+#GridInput{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    width: 90%;
+}
+
+#GridInput p{
+    width: 36%;
+    padding: 10px 0;
+
+    text-align: center;
+    font-family: serif;
+    color: rgb(1, 80, 83);
+    font-size: 1.6rem;
+    font-weight: bolder;
+    
+    background-color: rgb(230, 185, 127);
+    border: 4px solid beige;
+    border-radius: 10px;
+}
+
+#GridInput input{
+    width: 20%;
+    margin-left: 14px;
+    padding: 6px;
+
+    font-size: 1.4rem;
+    font-family: 'Cantarell', sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+    /* border: 4px solid rgb(230, 185, 127); */
+    border-radius: 6px;
+    background-color: beige;
+}
