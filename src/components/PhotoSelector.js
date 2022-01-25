@@ -21,18 +21,15 @@ export const PhotoSelector = () => {
     const { photos, loading } = useFetchPhotos( search );
 
     useEffect(() => {
+        
         if(photos.length > 0)
-        {
             setPhotoPuzzle( photos[0].urlRegular );
-            sessionStorage.setItem( 'previousPhotos', JSON.stringify( photos ));
-        }
+
     }, [ photos, setPhotoPuzzle ])
 
     return (
         <>
-            <InputSubject 
-                setSearch={ setSearch } 
-             />
+            <InputSubject setSearch={ setSearch } />
 
             <div id="selectorContainer">
                 
@@ -42,7 +39,7 @@ export const PhotoSelector = () => {
                     
                 { !photos && <p className="message">Connection to images provider failed.</p> }
 
-                { search !== '' && !loading && photos.length < 1 && <p className="message">There were no matches with the search words.</p> }
+                { search !== '' && !loading && photos.length < 1 && <p className="message">There were no matches with the search keywords.</p> }
 
                 { (search === '' || photos.length > 0) && !loading && 
                 

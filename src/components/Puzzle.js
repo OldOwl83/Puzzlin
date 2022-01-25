@@ -112,7 +112,7 @@ export const Puzzle = () => {
 
         { win && <img id="victoryPhoto" src={ photoPuzzle } />}
 
-        <Link to="/"><button id="comeBack">Come back to photos selector</button></Link>
+        <Link to={ -1 }><button id="comeBack">Come back to photos selector</button></Link>
 
         { win && <div id='victoryAlert'><p>You win!</p></div>}
 
