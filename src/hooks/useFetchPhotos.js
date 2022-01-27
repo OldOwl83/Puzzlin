@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { fetchPhotos } from '../functions/fetchPhotos';
 
-export const useFetchPhotos = ( keywords = '' ) => {
+export const useFetchPhotos = () => {
     // console.log("Aquí useFetchPhotos!!");
 
     const query = useLocation().search.slice(3);
@@ -33,7 +33,7 @@ export const useFetchPhotos = ( keywords = '' ) => {
         {
             setSearchState( { photos: [], loading: true } );
             
-            fetchPhotos( keywords )
+            fetchPhotos( query )
                 .then( phs => 
                     { 
                         setSearchState( { photos: phs, loading: false} )
@@ -48,7 +48,7 @@ export const useFetchPhotos = ( keywords = '' ) => {
                     });                   
         }
         
-    }, [ setSearchState, keywords, query ]);
+    }, [ setSearchState, query ]);
     
     return searchState;
 };

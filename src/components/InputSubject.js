@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { PropTypes } from 'prop-types';
 import { useLocation, useNavigate } from "react-router-dom";
 
 import '../styles/InputSubject.css';
 
-export const InputSubject = ( { setSearch } ) => {
+export const InputSubject = () => {
 
     // console.log( 'InputSubject' );
 
@@ -17,8 +16,6 @@ export const InputSubject = ( { setSearch } ) => {
         e.preventDefault();
         
         setInput( '' );
-
-        setSearch( input );
 
         navigate( `../?q=${ input }`, { 
             
@@ -40,9 +37,4 @@ export const InputSubject = ( { setSearch } ) => {
             </form>
         </h2>
     )
-}
-
-InputSubject.propTypes = {
-
-    setSearch: PropTypes.func.isRequired,
 }

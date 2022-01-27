@@ -16,9 +16,7 @@ export const PhotoSelector = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const [ search, setSearch ] = useState( '' );
-
-    const { photos, loading } = useFetchPhotos( search );
+    const { photos, loading } = useFetchPhotos();
 
     useEffect(() => {
         
@@ -38,7 +36,7 @@ export const PhotoSelector = () => {
 
     return (
         <>
-            <InputSubject setSearch={ setSearch } />
+            <InputSubject />
 
             <div id="selectorContainer">
                 
