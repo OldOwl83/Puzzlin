@@ -17,3 +17,8 @@
     from { opacity: 0; }
     to { opacity: 100%; }
 }
+
+#author{
+    font-size: 0.8rem;
+    text-align: left;
+}

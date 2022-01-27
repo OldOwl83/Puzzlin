@@ -1,5 +1,6 @@
 import { useReducer, useEffect, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
+
 import { initPieces, piecesReducer } from '../functions/piecesReducer';
 import { useVictory } from '../hooks/useVictory';
 import { MainPhotoContext, PuzzleGrid } from '../Puzzlin';
@@ -97,24 +98,29 @@ export const Puzzle = () => {
     return (
 
         <>
+
         <h2>Use the keyboard arrows to move the pieces inside the hole</h2>
+
         { !win && 
         
         <div 
             id="puzzleContainer" 
-            style={ { gridTemplateColumns: `repeat(${ columns }, ${ (100 / columns) }%)`,
-    gridTemplateRows: `repeat(${ rows }, ${ (100 / rows) }%)`, } }
+            style={ { gridTemplateColumns: `repeat(${ columns }, ${ (100 / columns) }%)`, gridTemplateRows: `repeat(${ rows }, ${ (100 / rows) }%)`, } }
         >
 
-            { positions.map( ( pos, i ) => <Piece key={ i } position={ pos } direc={direc} />) }
+            { positions.map( ( pos, i ) => <Piece key={ i } position={ pos } direc={ direc } />) }
 
         </div> }
 
-        { win && <img id="victoryPhoto" src={ photoPuzzle } />}
+        { win && 
+        
+        <>
+            <img id="victoryPhoto" src={ photoPuzzle } alt="Original image as you win." />
+            <div id='victoryAlert'><p>You win!</p></div> 
+        </> }
+        
 
         <Link to={ -1 }><button id="comeBack">Come back to photos selector</button></Link>
-
-        { win && <div id='victoryAlert'><p>You win!</p></div>}
 
         </>
     );

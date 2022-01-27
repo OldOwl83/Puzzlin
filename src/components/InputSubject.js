@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PropTypes } from 'prop-types';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import '../styles/InputSubject.css';
 
@@ -9,6 +9,7 @@ export const InputSubject = ( { setSearch } ) => {
     // console.log( 'InputSubject' );
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [ input, setInput ] = useState( '' );
     
@@ -19,7 +20,10 @@ export const InputSubject = ( { setSearch } ) => {
 
         setSearch( input );
 
-        navigate( `../?q=${ input }` );
+        navigate( `../?q=${ input }`, { 
+            
+            replace: location.search === `?q=${ input }` ? true : false,
+     } );
     }
 
     return (

@@ -1,14 +1,11 @@
 import { useContext, useEffect, useRef } from 'react';
-// import PropTypes from 'prop-types';
 
-import '../styles/Piece.css';
 import { MainPhotoContext, PuzzleGrid } from '../Puzzlin';
-// import { columns } from './Puzzle';
+import '../styles/Piece.css';
 
 export const Piece = ( { position, direc } ) => {
 
     const { photoPuzzle } = useContext( MainPhotoContext );
-
     const { puzzleGrid } = useContext( PuzzleGrid );
 
     const previousPosition = useRef( [] );
@@ -21,8 +18,8 @@ export const Piece = ( { position, direc } ) => {
 
     return (
         <div className={ position === 'black' ? `blackPieceContainer black${ direc[0] }` : `pieceContainer ${ previousPosition.current !== position && position !== 'black' ? direc[0] : '' }` }>
-            <img 
 
+            <img 
                 className={ ( position === 'black' && 'imgBlack' ) || 'imgPiece'}
                 src={ photoPuzzle }
                 style={ position !== 'black' 
@@ -30,12 +27,9 @@ export const Piece = ( { position, direc } ) => {
                     : {}}
 
                 alt="Piece of puzzle"
+                draggable='false'
             />
+            
         </div>
     )
 }
-
-// Piece.PropTypes = {
-//     photo: PropTypes.string.isRequired,
-//     position: PropTypes.array[Any(Number), Any(Number)].isRequired
-// }

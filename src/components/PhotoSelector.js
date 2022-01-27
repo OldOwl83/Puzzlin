@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-import { MainPhotoContext } from "../Puzzlin";
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
 import { InputSubject } from "./InputSubject";
 import { PhotoShowcase } from "./PhotoShowcase";
@@ -13,19 +13,28 @@ import 'animate.css';
 export const PhotoSelector = () => {
 
     // console.log('PhotoSelector');
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const [ search, setSearch ] = useState( '' );
-
-    const { setPhotoPuzzle } = useContext( MainPhotoContext );
 
     const { photos, loading } = useFetchPhotos( search );
 
     useEffect(() => {
         
-        if(photos.length > 0)
-            setPhotoPuzzle( photos[0].urlRegular );
+        if(photos.length > 0 && location.state === null )
+        {
+                navigate( location, {
+                    replace: true,
+                    state: {
+                        selectedPhoto: photos[0].urlRegular,
+                        contScroll: 0,
+                    }
+                });
 
-    }, [ photos, setPhotoPuzzle ])
+        }
+            
+    }, [ photos ]);
 
     return (
         <>
@@ -39,15 +48,15 @@ export const PhotoSelector = () => {
                     
                 { !photos && <p className="message">Connection to images provider failed.</p> }
 
-                { search !== '' && !loading && photos.length < 1 && <p className="message">There were no matches with the search keywords.</p> }
+                { !loading && photos.length < 1 && <p className="message">There were no matches with the search keywords.</p> }
 
-                { (search === '' || photos.length > 0) && !loading && 
+                { !loading && photos.length > 0 && 
                 
                 <div id="previewContainer">
                     
                     <GridInput />
                     <Preview /> 
-
+                    
                 </div>}
                     
             </div>

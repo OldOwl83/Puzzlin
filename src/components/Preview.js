@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { memo, useContext } from "react";
 // import { CSSTransition } from 'react-transition-group';
 
@@ -10,14 +10,24 @@ export const Preview = memo(() => {
 
     console.log( 'Preview' );
 
-    const { photoPuzzle } = useContext( MainPhotoContext );
+    const { setPhotoPuzzle } = useContext( MainPhotoContext );
+    const location = useLocation();
 
     return (
-
+        <>
         <Link to='/puzzle' id="photoPreviewContainer">
 
-            <img src={ photoPuzzle } alt="" id="imagePreview" />
+            <img 
+                src={ location.state?.selectedPhoto } 
+                alt="" 
+                draggable='false' 
+                id="imagePreview"
+                onClick={ ( e ) => setPhotoPuzzle( e.target.src ) }
+            />
     
         </Link>
+
+        <footer id="author">Photo by { location.state?.author }</footer>
+        </>
     )
 })

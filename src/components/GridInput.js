@@ -14,7 +14,7 @@ export const GridInput = () => {
     
     useEffect(() => {
         
-        setPuzzleGrid( [ Number( cols ), Number( rows ) ] );
+        setPuzzleGrid( [ cols, rows ] );
         
     }, [ setPuzzleGrid, cols, rows ]);
 
@@ -22,10 +22,10 @@ export const GridInput = () => {
     
         <div id="GridInput">
             <p>Columns
-                <NumberInput setValue={ setCols } min={ 4 } max={ 8 } />
+                <NumberInput setValue={ setCols } min={ 4 } max={ 8 } initialValue={ puzzleGrid[0] } />
             </p>
             <p>Rows
-                <NumberInput setValue={ setRows } min={ 3 } max={ 8 } />
+                <NumberInput setValue={ setRows } min={ 3 } max={ 8 } initialValue={ puzzleGrid[1] } />
             </p>
         </div>
     );

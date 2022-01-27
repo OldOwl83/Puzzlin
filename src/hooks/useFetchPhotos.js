@@ -8,7 +8,7 @@ export const useFetchPhotos = ( keywords = '' ) => {
     // console.log("Aquí useFetchPhotos!!");
 
     const query = useLocation().search.slice(3);
-    console.log("Query: ", query);
+    // console.log("Query: ", query);
     
     const [ searchState, setSearchState ] = useState( 
         {
@@ -18,7 +18,11 @@ export const useFetchPhotos = ( keywords = '' ) => {
     
     useEffect(() => {
 
-        if( query && localStorage.getItem( `puzzlin-${query}` ))
+        if( !query )
+    
+            setSearchState( { photos: [ { id: 'portada', description: 'Imagen de portada.', urlSmall: 'images/tapa.png', urlRegular: 'images/tapa.png' } ], loading: false} );
+       
+        else if( localStorage.getItem( `puzzlin-${query}` ))
 
             setSearchState( { 
                 photos: JSON.parse( localStorage.getItem( `puzzlin-${query}` ) ), 
