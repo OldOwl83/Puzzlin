@@ -2,7 +2,7 @@
 * This function makes the request to the 'unsplash.com' API to receive an array of photo objects. It receives the search keywords by parameter, makes the request and filters the response to obtain only the photos whose width is between 1.3 and 1.42 greater than its height. It loops through several pages of the request ( maximum 10 ) until the array of photo objects reaches a maximum of 20 elements. The obtained photo objects save the following data: id, description, urlRegular, urlSmall and author.
 */
 
-export const fetchPhotos = async( keywords = '' ) => {
+export const photosFetch = async( keywords = '' ) => {
 
     let page = 1; // Request pages counter
     const widePhotos = []; // Array for the obtained photos

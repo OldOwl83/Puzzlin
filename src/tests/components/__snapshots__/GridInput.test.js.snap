@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on the <GridInput /> component It should match the snapshot. 1`] = `
+<div
+  id="GridInput"
+>
+  <p>
+    Columns
+    <NumberInput
+      initialValue={4}
+      max={8}
+      min={4}
+      setValue={[Function]}
+    />
+  </p>
+  <p>
+    Rows
+    <NumberInput
+      initialValue={3}
+      max={8}
+      min={3}
+      setValue={[Function]}
+    />
+  </p>
+</div>
+`;

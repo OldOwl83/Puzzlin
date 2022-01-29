@@ -1,15 +1,12 @@
-import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
+import { photosFetch } from "../../functions/photosFetch";
 
-import { fetchPhotos } from "../../functions/fetchPhotos";
-
-describe('Test on fetchPhotos function', () => {
+describe('Tests on photosFetch function', () => {
 
     test('It should return a promise with photos array as response.', async() => {
 
         let photos = [];
     
-        await fetchPhotos( 'words' )
+        await photosFetch( 'words' )
             .then( ( phs ) => { photos = phs; })
             .catch( (err) => {console.log( err )});
 

@@ -1,3 +1,7 @@
+/*
+* An input box to set the search keywords in the URL query parameters.
+*/
+
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -18,7 +22,7 @@ export const InputSubject = () => {
         setInput( '' );
 
         navigate( `../?q=${ input }`, { 
-            
+            //if the query is repeated immediately, the location is not duplicated in browser history.
             replace: location.search === `?q=${ input }` ? true : false,
      } );
     }

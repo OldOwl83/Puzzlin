@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <Preview /> component It should match the snapshot. 1`] = `
+Array [
+  <a
+    href="/puzzle"
+    id="photoPreviewContainer"
+    onClick={[Function]}
+  >
+    <img
+      alt=""
+      draggable="false"
+      id="imagePreview"
+      onClick={[Function]}
+      src="portada.jpg"
+    />
+  </a>,
+  <footer
+    id="author"
+  >
+    Photo by 
+    Napoleón
+  </footer>,
+]
+`;

@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
+/*
+* It watches the URL for query parameters and handles the fetching and storing of data for each search. If a search is repeated, it falls back to localStorage in order to save API requests. It returns a state object containing the array of fetched "photos" and the "loading" status (true or false). If there was an error in the fetch, the "photos" property becomes false.
+*/
 
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { fetchPhotos } from '../functions/fetchPhotos';
+import { photosFetch } from '../functions/photosFetch';
 
-export const useFetchPhotos = () => {
-    // console.log("Aquí useFetchPhotos!!");
+export const usePhotosFetch = () => {
+    // console.log("Aquí usephotosFetch!!");
 
     const query = useLocation().search.slice(3);
-    // console.log("Query: ", query);
     
     const [ searchState, setSearchState ] = useState( 
         {
@@ -20,7 +22,7 @@ export const useFetchPhotos = () => {
 
         if( !query )
     
-            setSearchState( { photos: [ { id: 'portada', description: 'Imagen de portada.', urlSmall: 'images/tapa.png', urlRegular: 'images/tapa.png' } ], loading: false} );
+            setSearchState( { photos: [ { id: 'portada', description: 'Imagen de portada.', urlSmall: 'images/tapa.png', urlRegular: 'images/tapa.png', author: 'Mauro Donnantuoni' } ], loading: false} );
        
         else if( localStorage.getItem( `puzzlin-${query}` ))
 
@@ -32,12 +34,12 @@ export const useFetchPhotos = () => {
         else
         {
             setSearchState( { photos: [], loading: true } );
-            
-            fetchPhotos( query )
+
+            photosFetch( query )
                 .then( phs => 
                     { 
                         setSearchState( { photos: phs, loading: false} )
-
+                       
                         if( query )
                             localStorage.setItem( `puzzlin-${query}`, JSON.stringify( phs ) );
                     })

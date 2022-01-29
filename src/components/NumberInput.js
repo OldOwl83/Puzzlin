@@ -9,7 +9,7 @@ export const NumberInput = ( { setValue, min, max, initialValue }) => {
     const [ input, setInput ] = useState( initialValue );
     
     useEffect(() => {
-        
+    
         if( ( input >= min && input <= max ) || input === '' ) //It must include '' to allow erase manually the text in the input box.
         {
             if( input >= min && input <= max )
@@ -34,7 +34,7 @@ export const NumberInput = ( { setValue, min, max, initialValue }) => {
             value={ input }
             min={ min }
             max={ max }
-            onChange={ ( e ) => setInput( e.target.value) } 
+            onChange={ ( e ) => setInput( e.target.value ) } 
         />
     );
 };

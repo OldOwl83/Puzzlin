@@ -1,3 +1,7 @@
+/*
+* This component displays the selected photo stored in the location state. The displayed image has a link to the puzzle board and sets the main photo in context when the user clicks on it.
+*/
+
 import { Link, useLocation } from "react-router-dom";
 import { memo, useContext } from "react";
 // import { CSSTransition } from 'react-transition-group';
@@ -27,7 +31,7 @@ export const Preview = memo(() => {
     
         </Link>
 
-        <footer id="author">Photo by { location.state?.author }</footer>
+        <footer id="author">Photo by { location.state?.author || 'Mauro Donnantuoni' }</footer>
         </>
     )
 })

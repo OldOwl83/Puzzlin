@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <NumberInput /> component It should match the snapshot and takes the initial value 1`] = `
+<input
+  max={8}
+  min={3}
+  onChange={[Function]}
+  type="number"
+  value={5}
+/>
+`;
+
+exports[`Tests on <NumberInput /> component It should match with the snapshot and takes the initial value 1`] = `
+<input
+  max={8}
+  min={3}
+  onChange={[Function]}
+  type="number"
+  value={5}
+/>
+`;

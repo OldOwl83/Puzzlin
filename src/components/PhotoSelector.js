@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { useFetchPhotos } from "../hooks/useFetchPhotos";
+import { usePhotosFetch } from "../hooks/usePhotosFetch";
 import { InputSubject } from "./InputSubject";
 import { PhotoShowcase } from "./PhotoShowcase";
 import { GridInput } from "./GridInput";
@@ -16,7 +16,7 @@ export const PhotoSelector = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const { photos, loading } = useFetchPhotos();
+    const { photos, loading } = usePhotosFetch();
 
     useEffect(() => {
         
@@ -42,7 +42,7 @@ export const PhotoSelector = () => {
                 
                 <PhotoShowcase photos={ photos } />
 
-                { loading && <p className="message" id="loading">Loading...</p> }
+                { loading && <p className="message"><i id="loading" className="fas fa-spinner"></i></p> }
                     
                 { !photos && <p className="message">Connection to images provider failed.</p> }
 

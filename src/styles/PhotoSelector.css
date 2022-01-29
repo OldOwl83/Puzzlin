@@ -5,7 +5,7 @@ h2{
 
 #selectorContainer{
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
 
     align-items: center;
 
@@ -14,22 +14,19 @@ h2{
     padding: 14px;
 }
 
-#imgPreview{
-    width: 70%;
-}
-
 .message{
     display: inline-block;
 
     width: 66%;
 
     font-size: 2.2rem;
+    text-align: center;
 
     color: rgb(45, 22, 88);
 }
 
 #loading{
-    width: 18%;
+    font-size: 3rem;
     
     transform-origin: center;
     animation: turn 1.4s infinite;
