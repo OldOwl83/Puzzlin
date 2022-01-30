@@ -1,20 +1,60 @@
 #puzzleContainer{
     display: grid;
 
-    width: 800px;
-    height: 540px;
     margin: 18px auto;
-    /* padding: 10px; */
 }
 
 #victoryPhoto{
     display: block;
-    width: 800px;
-    height: 540px;
     margin: 18px auto;
-    box-sizing: content-box;
+    box-sizing: border-box;
 
     border: 2px solid gray;
+}
+
+@media screen and (min-width: 1601px)
+{
+    #puzzleContainer, #victoryPhoto
+    {
+        width: 800px;
+        height: 540px;
+    }
+}
+
+@media screen and (min-width: 1401px) and (max-width: 1600px)
+{
+    #puzzleContainer, #victoryPhoto
+    {
+        width: 700px;
+        height: 472px;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px)
+{
+    #puzzleContainer, #victoryPhoto
+    {
+        width: 600px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px)
+{
+    #puzzleContainer, #victoryPhoto
+    {
+        width: 500px;
+        height: 338px;
+    }
+}
+
+@media screen and (max-width: 991px)
+{
+    #puzzleContainer, #victoryPhoto
+    {
+        width: 500px;
+        height: 338px;
+    }
 }
 
 #victoryAlert{

@@ -9,6 +9,7 @@ import { Puzzle } from "./components/Puzzle";
 import { NoRoute } from "./components/NoRoute";
 
 import './styles/Puzzlin.css';
+import './styles/footer.css';
 
 export const MainPhotoContext = createContext( null );
 export const PuzzleGrid = createContext( [] );
@@ -20,7 +21,12 @@ export const Puzzlin = () => {
 
     return (
         <>
-            <h1>Puzzlin</h1>
+            <header>
+                <h1>Puzzlin</h1>
+                <div id="logoContainer">
+                    <img src="images/rompecabezas.png" />
+                </div>
+            </header>
             <hr />
 
             <Router>
@@ -41,7 +47,17 @@ export const Puzzlin = () => {
                 </PuzzleGrid.Provider>
                 </MainPhotoContext.Provider>
             </Router>
+            <footer id="footer">
 
+                <ul id="footer_data">
+                    <li>© 2022 Mauro Donnantuoni Moratto</li>
+                    <li><a href="https://github.com/OldOwl83">GitHub: OldOwl83</a></li>
+                    <li><a href="https://hellocode-blog.net/">Hello Code!</a></li>
+                    <li id='freepik'><a href="https://www.flaticon.es/iconos-gratis/rompecabezas" title="rompecabezas iconos">Rompecabezas iconos creados por Freepik - Flaticon</a></li>
+                </ul>
+                <img src="images/developed.png" id="developed" draggable="false" />
+
+            </footer>
         </>
     )
 };

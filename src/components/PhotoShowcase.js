@@ -19,7 +19,7 @@ export const PhotoShowcase = ( { photos = [] } ) => {
         setPhotosContHeight( photos.length * 110 );
         setPhotosContScroll( location.state?.contSroll || 0 );
 
-    }, [ photos, location ]);
+    }, [ photos ]);
 
     return (
         <div id="sampler">

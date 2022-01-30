@@ -1,7 +1,57 @@
+@font-face
+{
+        font-family: 'Dongle';
+        font-weight: normal;
+        src: url('../../public/fonts/Dongle/Dongle-Regular.ttf');
+}
+
+@font-face
+{
+        font-family: 'Dongle';
+        font-weight: bold;
+        src: url('../../public/fonts/Dongle/Dongle-Bold.ttf');
+}
+
+@font-face
+{
+        font-family: 'Dongle';
+        font-weight: 200;
+        src: url('../../public/fonts/Dongle/Dongle-Light.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 20%;
+    margin: 16px;
+}
+
+#logoContainer img{
+    width: 60%;
+
+    border: 3px solid rgb(230, 185, 127);
+}
+
 h1{
+    width: 50%;
+    margin: 0;
+
     color: rgb(1, 80, 83);
-    font-size: 2.4rem;
-    padding: 0 40px;
+    font-size: 5rem;
+    font-family: 'Coiny';
+    
+    text-align: center;
 }
 
 hr{

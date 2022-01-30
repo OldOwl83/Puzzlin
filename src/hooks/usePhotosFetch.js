@@ -22,7 +22,37 @@ export const usePhotosFetch = () => {
 
         if( !query )
     
-            setSearchState( { photos: [ { id: 'portada', description: 'Imagen de portada.', urlSmall: 'images/tapa.png', urlRegular: 'images/tapa.png', author: 'Mauro Donnantuoni' } ], loading: false} );
+            setSearchState( { photos: [ 
+                { 
+                    id: 'portada1', 
+                    description: 'Imagen de portada 1.', 
+                    urlSmall: 'images/portada1.png', 
+                    urlRegular: 'images/portada1.png', 
+                    author: 'Mauro Donnantuoni' 
+                },
+                { 
+                    id: 'portada2', 
+                    description: 'Imagen de portada 2.', 
+                    urlSmall: 'images/portada2.png', 
+                    urlRegular: 'images/portada2.png', 
+                    author: 'Mauro Donnantuoni' 
+                },
+                { 
+                    id: 'portada3', 
+                    description: 'Imagen de portada 3.', 
+                    urlSmall: 'images/portada3.png', 
+                    urlRegular: 'images/portada3.png', 
+                    author: 'Mauro Donnantuoni' 
+                },
+                { 
+                    id: 'portada4', 
+                    description: 'Imagen de portada 4.', 
+                    urlSmall: 'images/portada4.png', 
+                    urlRegular: 'images/portada4.png', 
+                    author: 'Mauro Donnantuoni' 
+                }, 
+            
+            ], loading: false} );
        
         else if( localStorage.getItem( `puzzlin-${query}` ))
 

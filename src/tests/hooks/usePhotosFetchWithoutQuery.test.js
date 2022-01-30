@@ -65,8 +65,8 @@ describe('Tests on "usePhotosFetch" hook without URL query', () => {
         
         const { result } = renderHook( () => usePhotosFetch());
 
-        expect( result.current.photos.length ).toBe( 1 );
-        expect( result.current.photos[0].id ).toBe( 'portada' );
+        expect( result.current.photos.length ).toBe( 4 );
+        expect( result.current.photos[0].id ).toBe( 'portada1' );
         expect( result.current.loading ).toBe( false );
     });
 

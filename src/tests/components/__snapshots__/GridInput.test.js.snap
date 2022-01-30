@@ -6,7 +6,7 @@ exports[`Tests on the <GridInput /> component It should match the snapshot. 1`] 
 >
   <p>
     Columns
-    <NumberInput
+    <Memo()
       initialValue={4}
       max={8}
       min={4}
@@ -15,7 +15,7 @@ exports[`Tests on the <GridInput /> component It should match the snapshot. 1`] 
   </p>
   <p>
     Rows
-    <NumberInput
+    <Memo()
       initialValue={3}
       max={8}
       min={3}
