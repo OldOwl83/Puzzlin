@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useState, useContext } from 'react';
+import { useReducer, useEffect, useState, useContext, useCallback } from 'react';
 import { Link } from "react-router-dom";
 
 import { initPieces, piecesReducer } from '../functions/piecesReducer';
@@ -12,9 +12,9 @@ export let columns;
 export let rows;
 
 export const Puzzle = () => {
-    
+
     const { puzzleGrid } = useContext( PuzzleGrid );
-    const { photoPuzzle } = useContext( MainPhotoContext );
+    const { puzzlePhoto } = useContext( MainPhotoContext );
     
     columns = puzzleGrid[0];
     rows = puzzleGrid[1];
@@ -25,7 +25,7 @@ export const Puzzle = () => {
 
     const win = useVictory( positions );
 
-    const movePiece = ( e ) => {
+    const movePiece = useCallback( ( e ) => {
         
         const blackIndex = positions.findIndex( pos => pos === 'black' );
         
@@ -37,8 +37,8 @@ export const Puzzle = () => {
                 
                 if( blackIndex / columns >= 1)
                 {
-                    setDirec( ['down', 'up'] );
-                    dispatch("down");
+                    setDirec( 'down' );
+                    dispatch( "down" );
                 }
                 break;
                 
@@ -48,8 +48,8 @@ export const Puzzle = () => {
                     
                 if( blackIndex / columns < rows - 1)
                 {
-                    setDirec( ['up', 'down'] );
-                    dispatch("up");
+                    setDirec( 'up' );
+                    dispatch( "up" );
                 }   
                 break;
                 
@@ -59,8 +59,8 @@ export const Puzzle = () => {
                 
                 if( blackIndex % columns !== 0)
                 {
-                    setDirec( ['right', 'left'] );
-                    dispatch("right");
+                    setDirec( 'right' );
+                    dispatch( "right" );
                 }   
                 break;
                 
@@ -70,15 +70,15 @@ export const Puzzle = () => {
 
                 if( blackIndex % columns !== columns - 1)
                 {
-                    setDirec( ['left', 'right'] );
-                    dispatch("left");
+                    setDirec( 'left' );
+                    dispatch( "left" );
                 }   
                 break;
                                 
             default:
                 break;
         }
-    }
+    }, [ positions ]);
                     
     useEffect(() => {
         
@@ -87,13 +87,13 @@ export const Puzzle = () => {
         return () => {
             window.removeEventListener( 'keydown', movePiece );
         }
-    }, [ positions ] ); //It needs update the value of 'blackIndex' in the 'movePiece' function.
+    }, [ positions, movePiece ] );
 
     useEffect( () => {
 
         if(win)
             window.removeEventListener( 'keydown', movePiece );
-    }, [ win ]);
+    }, [ win, movePiece ]);
 
     return (
 
@@ -115,7 +115,7 @@ export const Puzzle = () => {
         { win && 
         
         <>
-            <img id="victoryPhoto" src={ photoPuzzle } alt="Original image as you win." />
+            <img id="victoryPhoto" src={ puzzlePhoto } alt="You win!" />
             <div id='victoryAlert'><p>You win!</p></div> 
         </> }
         

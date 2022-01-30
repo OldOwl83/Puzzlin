@@ -2,14 +2,14 @@
 * It handles the contextual values of the puzzle grid. These values represent the columns and rows to cut out the puzzle photo and are in an array with two indices, which is a state belonging to the <Puzzlin /> component.
 */
 
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, memo } from "react";
 
 import { PuzzleGrid } from "../Puzzlin";
 import { NumberInput } from "./NumberInput";
 
 import "../styles/GridInput.css";
 
-export const GridInput = () => {
+export const GridInput = memo(() => {
 
     const { puzzleGrid, setPuzzleGrid } = useContext( PuzzleGrid );
     
@@ -34,4 +34,4 @@ export const GridInput = () => {
             </p>
         </div>
     );
-}
+});

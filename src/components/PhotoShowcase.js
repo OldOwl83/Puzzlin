@@ -9,8 +9,6 @@ import '../styles/PhotoShowcase.css';
 
 export const PhotoShowcase = ( { photos = [] } ) => {
     
-    // console.log(photos);
-
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -80,4 +78,4 @@ export const PhotoShowcase = ( { photos = [] } ) => {
             >keyboard_double_arrow_down</div>
         </div>
     )
-}
+};

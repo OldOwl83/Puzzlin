@@ -12,9 +12,9 @@ import { MainPhotoContext } from '../Puzzlin';
 
 export const Preview = memo(() => {
 
-    console.log( 'Preview' );
+    // console.log( 'Preview' );
 
-    const { setPhotoPuzzle } = useContext( MainPhotoContext );
+    const { setPuzzlePhoto } = useContext( MainPhotoContext );
     const location = useLocation();
 
     return (
@@ -26,7 +26,7 @@ export const Preview = memo(() => {
                 alt="" 
                 draggable='false' 
                 id="imagePreview"
-                onClick={ ( e ) => setPhotoPuzzle( e.target.src ) }
+                onClick={ ( e ) => setPuzzlePhoto( e.target.src ) }
             />
     
         </Link>

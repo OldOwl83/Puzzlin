@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <PhotoSelector /> component. It should match the snapshot and display the "previewContainer" element. 1`] = `
+Array [
+  <h2>
+    Input a subject and select a photo. Then, press on the preview to start.
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        autoComplete="on"
+        id="inputSubject"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </form>
+  </h2>,
+  <div
+    id="selectorContainer"
+  >
+    <div
+      id="sampler"
+    >
+      <div
+        className="material-icons arrows"
+        onClick={[Function]}
+      >
+        keyboard_double_arrow_up
+      </div>
+      <div
+        id="photosHidder"
+      >
+        <div
+          id="photosContainer"
+          style={
+            Object {
+              "height": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+      <div
+        className="material-icons arrows"
+        onClick={[Function]}
+      >
+        keyboard_double_arrow_down
+      </div>
+    </div>
+    <p
+      className="message"
+    >
+      There were no matches with the search keywords.
+    </p>
+  </div>,
+]
+`;

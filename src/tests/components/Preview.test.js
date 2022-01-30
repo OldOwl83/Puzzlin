@@ -24,11 +24,11 @@ jest.mock('react-router-dom', () => ({
 
 describe('Tests on <Preview /> component', () => {
 
-    const setPhotoPuzzle = jest.fn();
+    const setPuzzlePhoto = jest.fn();
 
     const wrapper = mount( 
         <MemoryRouter>
-            <MainPhotoContext.Provider value={ { setPhotoPuzzle } }>
+            <MainPhotoContext.Provider value={ { setPuzzlePhoto } }>
                 <Preview /> 
 
             </MainPhotoContext.Provider>
@@ -46,12 +46,12 @@ describe('Tests on <Preview /> component', () => {
         expect( wrapper.find( 'footer' ).text()).toBe( 'Photo by Napoleón' );
     });
 
-    test('It should call "setPhotoPuzzle" function on click event with source image data.', () => {
+    test('It should call "setPuzzlePhoto" function on click event with source image data.', () => {
       
         wrapper.find( 'img' ).simulate( 'click', { target: { src: 'portada.jpg' }} );
 
-        expect( setPhotoPuzzle ).toHaveBeenCalledTimes( 1 );
-        expect( setPhotoPuzzle ).toHaveBeenCalledWith( 'portada.jpg' );
+        expect( setPuzzlePhoto ).toHaveBeenCalledTimes( 1 );
+        expect( setPuzzlePhoto ).toHaveBeenCalledWith( 'portada.jpg' );
     });
     
     

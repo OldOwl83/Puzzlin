@@ -2,10 +2,10 @@
 * General purpose number input. It receives by parameters a function which changes an external value or state, the minimum and maximum numbers allowed and the initial value. If the user tries to exceed the set range, it automatically sets the minimum or maximum accordingly. It sets the value as an integer data type.
 */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 
-export const NumberInput = ( { setValue, min, max, initialValue }) => {
-  
+export const NumberInput = memo(( { setValue, min, max, initialValue }) => {
+
     const [ input, setInput ] = useState( initialValue );
     
     useEffect(() => {
@@ -25,7 +25,7 @@ export const NumberInput = ( { setValue, min, max, initialValue }) => {
             setValue( Number( min ) )
             setInput( min );
         }
-    }, [ input ]);
+    }, [ input, min, max, setValue ]);
 
     return (
     
@@ -37,4 +37,4 @@ export const NumberInput = ( { setValue, min, max, initialValue }) => {
             onChange={ ( e ) => setInput( e.target.value ) } 
         />
     );
-};
+});

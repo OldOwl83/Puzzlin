@@ -29,7 +29,6 @@ export const PhotoSelector = () => {
                         contScroll: 0,
                     }
                 });
-
         }
             
     }, [ photos ]);

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on "black" <Piece /> component It should match the snapshot 1`] = `
+<div
+  className="blackPieceContainer blackup"
+>
+  <img
+    alt="Piece of puzzle"
+    className="imgBlack"
+    draggable="false"
+    src="portada.jpg"
+    style={Object {}}
+  />
+</div>
+`;
+
+exports[`Tests on "white" <Piece /> component It should match the snapshot 1`] = `
+<div
+  className="pieceContainer up"
+>
+  <img
+    alt="Piece of puzzle"
+    className="imgPiece"
+    draggable="false"
+    src="portada.jpg"
+    style={
+      Object {
+        "left": "-100%",
+        "top": "-100%",
+        "width": "400%",
+      }
+    }
+  />
+</div>
+`;
