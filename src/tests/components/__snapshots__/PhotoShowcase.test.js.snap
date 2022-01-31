@@ -28,7 +28,7 @@ exports[`Tests on <PhotoShowcase /> component It should match the snapshot and d
       >
         <img
           alt="Primera descripción"
-          className="animate__animated animate__zoomIn"
+          className="animate__animated animate__backInLeft"
           draggable="false"
           onClick={[Function]}
           src="www.primeraUrlSmall.com"
@@ -40,7 +40,7 @@ exports[`Tests on <PhotoShowcase /> component It should match the snapshot and d
       >
         <img
           alt="Segunda descripción"
-          className="animate__animated animate__zoomIn"
+          className="animate__animated animate__backInLeft"
           draggable="false"
           onClick={[Function]}
           src="www.segundaUrlSmall.com"
@@ -52,7 +52,7 @@ exports[`Tests on <PhotoShowcase /> component It should match the snapshot and d
       >
         <img
           alt="Primera descripción"
-          className="animate__animated animate__zoomIn"
+          className="animate__animated animate__backInLeft"
           draggable="false"
           onClick={[Function]}
           src="www.primeraUrlSmall.com"
@@ -64,7 +64,7 @@ exports[`Tests on <PhotoShowcase /> component It should match the snapshot and d
       >
         <img
           alt="Segunda descripción"
-          className="animate__animated animate__zoomIn"
+          className="animate__animated animate__backInLeft"
           draggable="false"
           onClick={[Function]}
           src="www.segundaUrlSmall.com"
@@ -76,7 +76,7 @@ exports[`Tests on <PhotoShowcase /> component It should match the snapshot and d
       >
         <img
           alt="Primera descripción"
-          className="animate__animated animate__zoomIn"
+          className="animate__animated animate__backInLeft"
           draggable="false"
           onClick={[Function]}
           src="www.primeraUrlSmall.com"
@@ -88,7 +88,7 @@ exports[`Tests on <PhotoShowcase /> component It should match the snapshot and d
       >
         <img
           alt="Segunda descripción"
-          className="animate__animated animate__zoomIn"
+          className="animate__animated animate__backInLeft"
           draggable="false"
           onClick={[Function]}
           src="www.segundaUrlSmall.com"
@@ -100,7 +100,7 @@ exports[`Tests on <PhotoShowcase /> component It should match the snapshot and d
       >
         <img
           alt="Primera descripción"
-          className="animate__animated animate__zoomIn"
+          className="animate__animated animate__backInLeft"
           draggable="false"
           onClick={[Function]}
           src="www.primeraUrlSmall.com"
@@ -112,7 +112,7 @@ exports[`Tests on <PhotoShowcase /> component It should match the snapshot and d
       >
         <img
           alt="Segunda descripción"
-          className="animate__animated animate__zoomIn"
+          className="animate__animated animate__backInLeft"
           draggable="false"
           onClick={[Function]}
           src="www.segundaUrlSmall.com"

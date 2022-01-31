@@ -3,10 +3,10 @@
 */
 
 import { Link, useLocation } from "react-router-dom";
-import { memo, useContext } from "react";
-// import { CSSTransition } from 'react-transition-group';
+import React, { useState, memo, useContext } from "react";
 
 import '../styles/Preview.css';
+import 'animate.css';
 
 import { MainPhotoContext } from '../Puzzlin';
 
@@ -16,6 +16,7 @@ export const Preview = memo(() => {
 
     const { setPuzzlePhoto } = useContext( MainPhotoContext );
     const location = useLocation();
+    const [fade, setFade] = useState();
 
     return (
         <>
@@ -23,12 +24,13 @@ export const Preview = memo(() => {
 
             <img 
                 src={ location.state?.selectedPhoto } 
-                alt="" 
+                alt="Preview" 
                 draggable='false' 
-                id="imagePreview"
+                id={ fade ? "imagePreview1" : 'imagePreview2'}
                 onClick={ ( e ) => setPuzzlePhoto( e.target.src ) }
+                onLoad={ () => { setFade( !fade )} }
             />
-    
+
         </Link>
 
         <footer id="author">Photo by { location.state?.author || 'Mauro Donnantuoni' }</footer>

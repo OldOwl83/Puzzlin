@@ -2,21 +2,21 @@
 {
         font-family: 'Dongle';
         font-weight: normal;
-        src: url('../../public/fonts/Dongle/Dongle-Regular.ttf');
+        src: url('fonts/Dongle/Dongle-Regular.ttf');
 }
 
 @font-face
 {
         font-family: 'Dongle';
         font-weight: bold;
-        src: url('../../public/fonts/Dongle/Dongle-Bold.ttf');
+        src: url('fonts/Dongle/Dongle-Bold.ttf');
 }
 
 @font-face
 {
         font-family: 'Dongle';
         font-weight: 200;
-        src: url('../../public/fonts/Dongle/Dongle-Light.ttf');
+        src: url('fonts/Dongle/Dongle-Light.ttf');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');

@@ -3,7 +3,7 @@ import {
     Routes, Route,
         } from "react-router-dom"; 
 
-import { createContext, useState } from "react";
+import React, { createContext, useState, Fragment } from "react";
 import { PhotoSelector } from "./components/PhotoSelector";
 import { Puzzle } from "./components/Puzzle";
 import { NoRoute } from "./components/NoRoute";
@@ -16,15 +16,15 @@ export const PuzzleGrid = createContext( [] );
 
 export const Puzzlin = () => {
 
-    const [ puzzlePhoto, setPuzzlePhoto ] = useState( '' );
+    const [ puzzlePhoto, setPuzzlePhoto ] = useState( 'images/portada1.png' );
     const [ puzzleGrid, setPuzzleGrid ] = useState( [4, 3] );
 
     return (
-        <>
+        <Fragment>
             <header>
                 <h1>Puzzlin</h1>
                 <div id="logoContainer">
-                    <img src="images/rompecabezas.png" />
+                    <img src="images/rompecabezas.png" alt="logo" />
                 </div>
             </header>
             <hr />
@@ -51,13 +51,13 @@ export const Puzzlin = () => {
 
                 <ul id="footer_data">
                     <li>© 2022 Mauro Donnantuoni Moratto</li>
-                    <li><a href="https://github.com/OldOwl83">GitHub: OldOwl83</a></li>
+                    <li><a href="https://github.com/OldOwl83/Puzzlin">GitHub: OldOwl83</a></li>
                     <li><a href="https://hellocode-blog.net/">Hello Code!</a></li>
                     <li id='freepik'><a href="https://www.flaticon.es/iconos-gratis/rompecabezas" title="rompecabezas iconos">Rompecabezas iconos creados por Freepik - Flaticon</a></li>
                 </ul>
-                <img src="images/developed.png" id="developed" draggable="false" />
+                <img src="images/developed.png" id="developed" alt="Developed by Old Owl" draggable="false" />
 
             </footer>
-        </>
+        </Fragment>
     )
 };

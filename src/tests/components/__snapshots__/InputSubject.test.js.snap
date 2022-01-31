@@ -2,7 +2,7 @@
 
 exports[`Tests on <InputSubject /> component It should match the snapshot  1`] = `
 <h2>
-  Input a subject and select a photo. Then, press on the preview to start.
+  Enter a subject and select a photo. Then, press on the preview to start.
   <form
     onSubmit={[Function]}
   >

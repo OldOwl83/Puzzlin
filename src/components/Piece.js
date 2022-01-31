@@ -2,7 +2,7 @@
 * This component represents a location on the puzzle grid that contains any pieces of the cropped photo. The location is fixed, while the pieces travel through the grid positions. This effect is achieved by moving an enlarged copy of the photo inside the location container, which partially covers it, revealing only the part that corresponds to the housed piece.
 */
 
-import { memo, useContext, useEffect, useRef } from 'react';
+import React, { memo, useContext, useEffect, useRef } from 'react';
 
 import { MainPhotoContext, PuzzleGrid } from '../Puzzlin';
 import '../styles/Piece.css';

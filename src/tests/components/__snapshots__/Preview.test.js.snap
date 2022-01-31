@@ -8,10 +8,11 @@ Array [
     onClick={[Function]}
   >
     <img
-      alt=""
+      alt="Preview"
       draggable="false"
-      id="imagePreview"
+      id="imagePreview2"
       onClick={[Function]}
+      onLoad={[Function]}
       src="portada.jpg"
     />
   </a>,

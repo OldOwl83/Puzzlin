@@ -2,7 +2,7 @@
 * An input box to set the search keywords in the URL query parameters.
 */
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import '../styles/InputSubject.css';
@@ -29,7 +29,7 @@ export const InputSubject = () => {
 
     return (
 
-        <h2>Input a subject and select a photo. Then, press on the preview to start.
+        <h2>Enter a subject and select a photo. Then, press on the preview to start.
             <form onSubmit={ submitInput }>
                 <input 
                     id="inputSubject"

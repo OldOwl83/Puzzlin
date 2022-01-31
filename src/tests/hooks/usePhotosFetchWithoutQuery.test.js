@@ -1,8 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { act } from 'react-dom/test-utils';
-import { useLocation } from 'react-router-dom';
+import 'react-router-dom';
 
-import { photosFetch } from "../../functions/photosFetch";
+import "../../functions/photosFetch";
 import { usePhotosFetch } from "../../hooks/usePhotosFetch";
 
 jest.mock( 'react-router-dom', () => {
@@ -38,26 +37,26 @@ jest.mock( "../../functions/photosFetch", () => {
 });
 
 //It don't work
-jest.spyOn(window.localStorage.__proto__, 'getItem').mockImplementation( () => {
+// jest.spyOn(window.localStorage.__proto__, 'getItem').mockImplementation( () => {
 
-            return JSON.stringify( [ 
-                {
-                    id: 33333,
-                    description: "Primer car", 
-                    urlRegular: 'www.primeraUrlCar.com',
-                    urlSmall: 'www.primeraUrlCar.com',
-                    author: 'José',
-                },
-                {
-                    id: 222222,
-                    description: "Segundo car", 
-                    urlRegular: 'www.segundaUrlCar.com',
-                    urlSmall: 'www.segundaUrlCar.com',
-                    author: 'Rodo',
-                },
-            ] );
+//             return JSON.stringify( [ 
+//                 {
+//                     id: 33333,
+//                     description: "Primer car", 
+//                     urlRegular: 'www.primeraUrlCar.com',
+//                     urlSmall: 'www.primeraUrlCar.com',
+//                     author: 'José',
+//                 },
+//                 {
+//                     id: 222222,
+//                     description: "Segundo car", 
+//                     urlRegular: 'www.segundaUrlCar.com',
+//                     urlSmall: 'www.segundaUrlCar.com',
+//                     author: 'Rodo',
+//                 },
+//             ] );
        
-} );
+// } );
 
 describe('Tests on "usePhotosFetch" hook without URL query', () => {
 

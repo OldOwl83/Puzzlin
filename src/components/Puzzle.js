@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useState, useContext, useCallback } from 'react';
+import React, { useReducer, useEffect, useState, useContext, useCallback } from 'react';
 import { Link } from "react-router-dom";
 
 import { initPieces, piecesReducer } from '../functions/piecesReducer';
@@ -120,7 +120,7 @@ export const Puzzle = () => {
         </> }
         
 
-        <Link to={ -1 }><button id="comeBack">Come back to photos selector</button></Link>
+        <Link to={ -1 }><button id="comeBack">Back to photo picker</button></Link>
 
         </>
     );

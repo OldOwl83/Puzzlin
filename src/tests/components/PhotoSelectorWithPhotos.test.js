@@ -1,3 +1,4 @@
+import React from 'react';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -14,66 +15,67 @@ jest.mock('react-router-dom', () => ({
     useLocation: () => { return { search: '?q=car', state: null }; },
 }));
 
-const photos = [ 
-    {
-        id: 63455,
-        description: "Primera descripción", 
-        urlRegular: 'www.primeraUrlRegular.com',
-        urlSmall: 'www.primeraUrlSmall.com',
-        author: 'José Antonio',
-    },
-    {
-        id: 5555,
-        description: "Segunda descripción", 
-        urlRegular: 'www.segundaUrlRegular.com',
-        urlSmall: 'www.segundaUrlSmall.com',
-        author: 'Rodo Arruabarrena',
-    },
-    {
-        id: 63415,
-        description: "Primera descripción", 
-        urlRegular: 'www.primeraUrlRegular.com',
-        urlSmall: 'www.primeraUrlSmall.com',
-        author: 'José Antonio',
-    },
-    {
-        id: 5525,
-        description: "Segunda descripción", 
-        urlRegular: 'www.segundaUrlRegular.com',
-        urlSmall: 'www.segundaUrlSmall.com',
-        author: 'Rodo Arruabarrena',
-    },
-    {
-        id: 63435,
-        description: "Primera descripción", 
-        urlRegular: 'www.primeraUrlRegular.com',
-        urlSmall: 'www.primeraUrlSmall.com',
-        author: 'José Antonio',
-    },
-    {
-        id: 5554,
-        description: "Segunda descripción", 
-        urlRegular: 'www.segundaUrlRegular.com',
-        urlSmall: 'www.segundaUrlSmall.com',
-        author: 'Rodo Arruabarrena',
-    },
-    {
-        id: 63555,
-        description: "Primera descripción", 
-        urlRegular: 'www.primeraUrlRegular.com',
-        urlSmall: 'www.primeraUrlSmall.com',
-        author: 'José Antonio',
-    },
-    {
-        id: 5565,
-        description: "Segunda descripción", 
-        urlRegular: 'www.segundaUrlRegular.com',
-        urlSmall: 'www.segundaUrlSmall.com',
-        author: 'Rodo Arruabarrena',
-    },
-];
-
 jest.mock( '../../hooks/usePhotosFetch', () => {
+
+    const photos = [ 
+        {
+            id: 63455,
+            description: "Primera descripción", 
+            urlRegular: 'www.primeraUrlRegular.com',
+            urlSmall: 'www.primeraUrlSmall.com',
+            author: 'José Antonio',
+        },
+        {
+            id: 5555,
+            description: "Segunda descripción", 
+            urlRegular: 'www.segundaUrlRegular.com',
+            urlSmall: 'www.segundaUrlSmall.com',
+            author: 'Rodo Arruabarrena',
+        },
+        {
+            id: 63415,
+            description: "Primera descripción", 
+            urlRegular: 'www.primeraUrlRegular.com',
+            urlSmall: 'www.primeraUrlSmall.com',
+            author: 'José Antonio',
+        },
+        {
+            id: 5525,
+            description: "Segunda descripción", 
+            urlRegular: 'www.segundaUrlRegular.com',
+            urlSmall: 'www.segundaUrlSmall.com',
+            author: 'Rodo Arruabarrena',
+        },
+        {
+            id: 63435,
+            description: "Primera descripción", 
+            urlRegular: 'www.primeraUrlRegular.com',
+            urlSmall: 'www.primeraUrlSmall.com',
+            author: 'José Antonio',
+        },
+        {
+            id: 5554,
+            description: "Segunda descripción", 
+            urlRegular: 'www.segundaUrlRegular.com',
+            urlSmall: 'www.segundaUrlSmall.com',
+            author: 'Rodo Arruabarrena',
+        },
+        {
+            id: 63555,
+            description: "Primera descripción", 
+            urlRegular: 'www.primeraUrlRegular.com',
+            urlSmall: 'www.primeraUrlSmall.com',
+            author: 'José Antonio',
+        },
+        {
+            id: 5565,
+            description: "Segunda descripción", 
+            urlRegular: 'www.segundaUrlRegular.com',
+            urlSmall: 'www.segundaUrlSmall.com',
+            author: 'Rodo Arruabarrena',
+        },
+    ];
+
     return {
         usePhotosFetch: () => { return {photos: photos, loading: false}; },
     };

@@ -2,7 +2,7 @@
 *
 */
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import '../styles/PhotoShowcase.css';
@@ -46,7 +46,7 @@ export const PhotoShowcase = ( { photos = [] } ) => {
                                 <div key={ id } className="photos">
 
                                     <img 
-                                        className="animate__animated animate__zoomIn" 
+                                        className="animate__animated animate__backInLeft" 
                                         src={ urlSmall } 
                                         alt={ description }
                                         draggable='false' 

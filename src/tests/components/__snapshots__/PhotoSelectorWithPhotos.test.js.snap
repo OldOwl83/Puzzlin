@@ -3,7 +3,7 @@
 exports[`Tests on <PhotoSelector /> component. It should match the snapshot and display the "previewContainer" element. 1`] = `
 Array [
   <h2>
-    Input a subject and select a photo. Then, press on the preview to start.
+    Enter a subject and select a photo. Then, press on the preview to start.
     <form
       onSubmit={[Function]}
     >
@@ -46,7 +46,7 @@ Array [
           >
             <img
               alt="Primera descripción"
-              className="animate__animated animate__zoomIn"
+              className="animate__animated animate__backInLeft"
               draggable="false"
               onClick={[Function]}
               src="www.primeraUrlSmall.com"
@@ -58,7 +58,7 @@ Array [
           >
             <img
               alt="Segunda descripción"
-              className="animate__animated animate__zoomIn"
+              className="animate__animated animate__backInLeft"
               draggable="false"
               onClick={[Function]}
               src="www.segundaUrlSmall.com"
@@ -70,7 +70,7 @@ Array [
           >
             <img
               alt="Primera descripción"
-              className="animate__animated animate__zoomIn"
+              className="animate__animated animate__backInLeft"
               draggable="false"
               onClick={[Function]}
               src="www.primeraUrlSmall.com"
@@ -82,7 +82,7 @@ Array [
           >
             <img
               alt="Segunda descripción"
-              className="animate__animated animate__zoomIn"
+              className="animate__animated animate__backInLeft"
               draggable="false"
               onClick={[Function]}
               src="www.segundaUrlSmall.com"
@@ -94,7 +94,7 @@ Array [
           >
             <img
               alt="Primera descripción"
-              className="animate__animated animate__zoomIn"
+              className="animate__animated animate__backInLeft"
               draggable="false"
               onClick={[Function]}
               src="www.primeraUrlSmall.com"
@@ -106,7 +106,7 @@ Array [
           >
             <img
               alt="Segunda descripción"
-              className="animate__animated animate__zoomIn"
+              className="animate__animated animate__backInLeft"
               draggable="false"
               onClick={[Function]}
               src="www.segundaUrlSmall.com"
@@ -118,7 +118,7 @@ Array [
           >
             <img
               alt="Primera descripción"
-              className="animate__animated animate__zoomIn"
+              className="animate__animated animate__backInLeft"
               draggable="false"
               onClick={[Function]}
               src="www.primeraUrlSmall.com"
@@ -130,7 +130,7 @@ Array [
           >
             <img
               alt="Segunda descripción"
-              className="animate__animated animate__zoomIn"
+              className="animate__animated animate__backInLeft"
               draggable="false"
               onClick={[Function]}
               src="www.segundaUrlSmall.com"
@@ -179,10 +179,11 @@ Array [
           onClick={[Function]}
         >
           <img
-            alt=""
+            alt="Preview"
             draggable="false"
-            id="imagePreview"
+            id="imagePreview2"
             onClick={[Function]}
+            onLoad={[Function]}
           />
         </a>,
         <footer

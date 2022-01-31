@@ -2,14 +2,18 @@
     display: grid;
 
     margin: 18px auto;
+
+    animation: fadeIn 700ms;
 }
 
 #victoryPhoto{
     display: block;
     margin: 18px auto;
     box-sizing: border-box;
-
+    
     border: 2px solid gray;
+
+    animation: fadeIn 700ms;
 }
 
 @media screen and (min-width: 1601px)
@@ -70,12 +74,12 @@
     height: 140px;
     padding: 0;
 
-    background-color: #445;
+    background-color: rgb(6, 82, 85);
     border: 3px solid #aaa;
     border-radius: 10px;
     box-shadow: 4px 4px 4px #555;
 
-    animation: backInDown 1.2s;
+    animation: backInDown 1.6s ease-in;
 }
 
 #victoryAlert p{
@@ -83,24 +87,29 @@
     font-size: 42px;
     font-family:'Courier New', Courier, monospace;
     font-weight: bolder;
-    color: white;
+    color: beige;
 
 }
 
 #comeBack{
     margin: 12px;
-    padding: 5px 8px;
+    padding: 10px 12px;
 
     font-size: 1.2rem;
     color: rgb(18, 112, 116);
-    font-family: 'Cantarell light';
-    font-weight: bolder;
+    font-family: 'Cantarell';
+    font-weight: bold;
 
     background-color: beige;
-    border-radius: 10px;
+    border: 2px solid rgb(18, 112, 116);
+    border-radius: 6px;
     cursor: pointer;
+    
+    transition: color 0.4s, background-color 0.4s, border 0.4s linear;
 }
 
 #comeBack:hover{
-    background-color: #ccc;
+    color: beige;
+    background-color: rgb(18, 112, 116);
+    border: 2px solid beige;
 }
