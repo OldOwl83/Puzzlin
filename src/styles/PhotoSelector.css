@@ -10,21 +10,19 @@
 }
 
 .message{
-    display: inline-block;
-
-    width: 66%;
+    width: 78%;
 
     font-size: 2.2rem;
     text-align: center;
 
-    color: rgb(45, 22, 88);
+    color: rgb(50, 13, 119);
 }
 
 #loading{
-    font-size: 3rem;
+    font-size: 3.8rem;
     
     transform-origin: center;
-    animation: turn 1.4s infinite;
+    animation: turn 1.6s infinite;
 }
 
 @keyframes turn{

@@ -27,6 +27,7 @@ export const PhotoSelector = () => {
                     state: {
                         selectedPhoto: photos[0].urlRegular,
                         contScroll: 0,
+                        author: photos[0].author,
                     }
                 });
         }

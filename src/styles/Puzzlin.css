@@ -28,6 +28,10 @@ header{
     align-items: center;
 }
 
+#toHomeLink{
+    text-decoration: none;
+}
+
 #logoContainer{
     display: flex;
     align-items: center;
